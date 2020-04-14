@@ -1,0 +1,114 @@
+<div class="mail">
+
+    <div class="page-template">
+        <br>
+    <div class="col-12">
+        <h4> Become a full member</h4>
+    </div>
+    <div class="col-12"> 
+        <div class="row" *ngIf="authError">
+            <div class="col-12 alert alert-danger">
+                {{ authError?.message }}
+            </div>
+        </div>       
+        <form #userRegForm="ngForm" (ngSubmit)="createUser(userRegForm)">
+
+                <div class="photo">
+                        <img src="assets/img/iim.png" id="photoProfile">
+                    </div>
+              <!--  Phote upload section-->
+                <div id="messagesDiv">
+                    <h6>Upload a profile photo</h6>
+                    <input ngModel #file="ngModel" type="file" id="file" class="form-control" name="file" required>
+                    <span  name="linkbox"></span>
+                </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-2">
+                    <input ngModel #firstname="ngModel" name="firstName" type="text" class="form-control" placeholder="First Name" required>
+                </div>
+        
+                <div class="col-md-6 mb-2">
+                    <input ngModel #lastname="ngModel" name="lastName" type="text" class="form-control" placeholder="Last Name" required>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12 mb-6">
+                    <input ngModel #email="ngModel" name="email" type="email" class="form-control" placeholder="Email" required>
+                </div>
+            </div>
+
+            <div>
+                <div class="row">
+                    <div class="col-md-12 mb-6">
+                         <input ngModel #password="ngModel" name="password" type="password" class="form-control mb-6" placeholder="Password" required>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-md-12 mb-2">
+                        <input name="password" type="password" class="form-control" placeholder="Confirm Password" required>
+                    </div>
+                </div>
+
+            <div class="row">
+                <div class="col-md-12 mb-6">
+                    <input ngModel #address="ngModel" name="address" type="text" class="form-control" placeholder="Address" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 mb-6">
+                    <input ngModel #country="ngModel" name="country" type="text" class="form-control" placeholder="Country" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 mb-6">
+                    <input ngModel #postcode="ngModel" name="postcode" type="text" class="form-control" placeholder="Zip Code" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 mb-6">
+                    <input ngModel #city="ngModel" name="city" type="text" class="form-control" placeholder="City" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 mb-6">
+                    <input ngModel #region="ngModel" name="region" type="text" class="form-control" placeholder="Region" required>
+                </div>
+            </div>
+
+
+            
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </div>
+                </div>
+            </div>  
+
+        </form>
+    </div>
+</div>
+</div>
+
+<footer class="footer">
+    <nav>
+        <ul>
+            <li>
+                <a href="terms-of-use">Terms of use</a>
+            </li>
+            <li>
+                <a href="privacy-policy">Privacy policy</a>
+            </li>
+            <li>
+                <a href="contact">Contact</a>
+            </li>
+        </ul>
+    </nav>
+</footer>

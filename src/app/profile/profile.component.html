@@ -1,0 +1,61 @@
+<!-- <div *ngIf="user"> -->
+<div class="main">
+
+    <div class="page-template">
+        <br>
+        <h2 style="text-align:center">My profile</h2>
+    
+        <div class="image">
+        {{ user?.File }}
+        </div>
+        <div class="full-name">
+            <p> Name: {{ user?.displayName }}</p>
+        </div>
+
+        <div class="country">
+            <p> Country: {{ user?.displayCountry }}</p>
+        </div>
+
+        <div class="address">
+            <p> Address: {{ user?.displayAddress }}</p>
+        </div>
+
+        <div class="postcode">
+            <p> PostCode: {{ user?.postcode }}</p>
+        </div>
+
+        <div class="city">
+            <p> City: {{ user?.city }}</p>
+        </div>
+
+        <div class="region">
+            <p> Region: {{ user?.region }}</p>
+        </div>
+
+        <br>
+    </div> 
+ 
+
+
+
+</div>
+<!-- </div> -->
+    
+
+<footer class="footer">
+    <nav>
+        <ul>
+            <li>
+                <a href="terms-of-use">Terms of use</a>
+            </li>
+            <li>
+                <a href="privacy-policy">Privacy policy</a>
+            </li>
+            <li>
+                <a href="contact">Contact</a>
+            </li>
+        </ul>
+    </nav>
+</footer>
+  
+ 

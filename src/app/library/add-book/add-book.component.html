@@ -1,0 +1,121 @@
+<section class="main">
+        <div class="divlogin clsScroll">
+
+                 <!-- Event submit -->
+        <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)" class="p-5">
+            <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
+      
+          <p class="h4 mb-4  title">Add a Book</p>
+
+                     <!-- Displayed uploaded Image-->
+            <div>
+                <img [src]="imgSrc" width="150px" height="150px" style="margin-bottom: 1em" (click)="fileUploader.click()">
+            </div>
+
+            
+
+            <!-- Impage upload Div -->
+            <div class="form-group">
+
+                <label for="imageUrl"></label>
+                <input type="file"
+                #fileUploader
+                [(ngModel)]="service.formData.imageUrl"
+                name="imageUrl"
+                #imageUrl="ngModel"
+                class="form-control"
+                (change)="onFileSelected($event)">
+            </div>
+                 
+                <!-- Form input section  -->
+            <div class="form-group">    
+                        <label for="bookTitle">Book Title</label>
+                        <input required minlength="2" maxlength="45" name="bookTitle" #bookTitle="ngModel"
+                         [(ngModel)]="service.formData.bookTitle" 
+                         id="bookTitle" type="text" class="form-control" placeholder="Book Title">
+                <div class="alert alert-Danger" *ngIf="bookTitle.touched && !bookTitle.valid">
+                    <div *ngIf="bookTitle.errors.required">
+                                Book Title is required
+                    </div>
+                    <div 
+                        *ngIf="bookTitle.errors.minlength">
+                                Min length letter 2
+                        {{ bookTitle.errors.minlenght.requiredLenght }}
+                    </div>
+                    <div
+                        *ngIf="bookTitle.errors.maxlength">
+                                Max lenght  should not exceed 45
+                    </div>
+              
+                </div>
+            </div>
+
+          <div class="form-group">    
+                  <label for="bookAuthor">Author</label>
+              <input required minlength="2" maxlength="45" ngModel name="bookAuthor" #bookAuthor="ngModel" 
+              [(ngModel)]="service.formData.bookAuthor" 
+              id="bookAuthor" type="text" class="form-control" placeholder="Book Author">
+              <div class="alert alert-Danger" *ngIf="bookAuthor.touched && !bookAuthor.valid">
+              <div *ngIf="bookAuthor.errors.required">
+                  Book Author is required
+              </div>
+              <div 
+              *ngIf="bookAuthor.errors.minlength">
+                  Min length letter 2
+                  {{ bookAuthor.errors.minlenght.requiredLenght }}
+              </div>
+              <div
+              *ngIf="bookAuthor.errors.maxlength">
+                  Max lenght  should not exceed 45
+              </div>
+          </div>
+          </div>
+
+          <div class="form-group">    
+              <label for="publishedDate" style="margin-left: -0.8em;">Book Published Date</label>
+              <input required minlength="10" maxlength="10" name="publishedDate" #publishedDate="ngModel" 
+              [(ngModel)]="service.formData.publishedDate"
+              id="publishedDate" type="text" class="form-control" placeholder="Book Published Date">
+              <div class="alert alert-Danger" *ngIf="publishedDate.touched && !publishedDate.valid">
+              <div *ngIf="publishedDate.errors.required">
+                  Book Author is required
+              </div>
+              <div 
+              *ngIf="publishedDate.errors.minlength">
+                  Min length letter 9
+                  {{ publishedDate.errors.minlenght.requiredLenght }}
+              </div>
+              <div
+              *ngIf="publishedDate.errors.maxlength">
+                  Max lenght  should not exceed 9
+              </div>
+              
+          </div>
+          </div>
+        <div class="form-group">
+            <label for="topic">Topic</label>
+          <select required option class="custom-select" name="topic" #topic="ngModel" [(ngModel)]="service.formData.topic"  id="topic" class="form-control mb-4">
+            <option >Networking</option>
+            <option >Python</option>
+            <option >Angular</option>
+            <option >JavaScript</option>
+            <option >Ruby</option>
+            <option >Jql</option>
+          </select>
+          </div>
+
+          <div class="form-group">
+          <label for="comment">Comment</label>
+          <textarea name="comment" #comment="ngModel" [(ngModel)]="service.formData.comment" id="comment" class="form-control mb-4"  class="form-control" placeholder="Comment" style="text-align: center;">
+          </textarea>
+          </div>
+            <!-- End of input section -->
+      
+          <div class="form-group">
+          <button class="btn btn-info btn-block my-4 btn-success" type="submit"[disabled]="form.invalid">Add a title</button>
+          </div>
+      </form>
+      
+        </div>
+       
+      </section>

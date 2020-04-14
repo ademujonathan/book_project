@@ -1,0 +1,76 @@
+<div class="page-template">
+    <div class="home-background">
+        <br>
+        <div class="login-button">
+            <button class="btn btn-primary" *ngIf="!user" (click)="login()">Login</button>
+        </div>
+            
+        <div class="register-button">
+                <button class="btn btn-primary mr-2"  *ngIf="!user" (click)="registration(registration)">Register</button>
+        </div> 
+
+        <div class="logOut-button">
+            <button class="btn btn-primary" *ngIf="user" (click)="logout()">Logout</button>
+        </div>
+    </div>
+        
+
+</div>
+<!-- if logged in-->
+
+<div class="pagggg">
+  <div *ngIf="user">
+    <div class="page-template">
+      <p>Welcome to Culturmax: {{ user?.displayName }}</p>
+    </div>
+                  
+    <div class="w3-content w3-display-container">
+      <div class="w3-display-container mySlides">
+            <img src="assets/img/developpers.jpg" style="width:100%">
+          <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
+            Developpers Books
+          </div>
+      </div>
+                  
+      <div class="w3-display-container mySlides">
+            <img src="assets/img/pythonlogo.jpg" style="width:100%">
+          <div class="w3-display-topleft w3-large w3-container w3-padding-16 w3-black">
+            Python Books
+          </div>
+      </div>
+                  
+      <div class="w3-display-container mySlides">
+           <img src="assets/img/networking.jpg" style="width:100%">
+         <div class="w3-display-topright w3-large w3-container w3-padding-16 w3-black">
+            Networking Books
+         </div>
+      </div>
+                  
+            <button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
+     </div> 
+  </div> 
+  </div>
+ 
+ 
+   
+<!-- End of if login -->
+
+
+<footer class="footer">
+    <nav>
+        <ul>
+            <li>
+                <a href="terms-of-use">Terms of use</a>
+            </li>
+            <li>
+                <a href="privacy-policy">Privacy policy</a>
+            </li>
+            <li>
+                <a href="contact">Contact</a>
+            </li>
+        </ul>
+    </nav>
+</footer>
+
+

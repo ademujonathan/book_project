@@ -1,0 +1,91 @@
+
+​<section class="page-template">   
+	<div class="container">
+
+      <div class="addBook">
+          <app-add-book></app-add-book>
+      </div>
+​
+    <!-- Faire un foreach ou un let pour chaque livre inclus dans la recherche -->
+​
+        
+      <div *ngFor="let joe of list">
+            <div class="img">  
+              <img [src]=''>
+            </div>
+      <h5 class="border-bottom border-white py-1"></h5>
+        <h3 (click)="onEdit(joe)">{{ joe.bookTitle }}</h3>
+      	<p (click)="onEdit(joe)">{{ joe.bookAuthor }}</p>
+        <p (click)="onEdit(joe)">{{ joe.publishedDate }}</p>
+        <p (click)="onEdit(joe)">{{ joe.topic }}</p>
+        <p (click)="onEdit(joe)">{{ joe.comment }}</p>
+        <p><a class="btn text-danger" (click)="onDelete(joe.id)"><i class="fa fa-trash"></i></a></p>
+      </div>
+
+              
+    		
+           
+			<!-- Fin du foreach ou un let pour chaque livre inclus dans la recherche -->
+​   </div>
+
+</section>
+<!--         
+        <div class="w3-content w3-display-container">
+        
+        <div class="w3-display-container mySlides">
+          <img src="assets/img/iim.png" style="width:100%">
+          <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+            French Alps
+          </div>
+        </div>
+        
+        <div class="w3-display-container mySlides">
+          <img src="" style="width:100%">
+          <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
+            Northern Lights
+          </div>
+        </div>
+        
+        <div class="w3-display-container mySlides">
+          <img src="" style="width:100%">
+          <div class="w3-display-topleft w3-large w3-container w3-padding-16 w3-black">
+            Beautiful Mountains
+          </div>
+        </div>
+        
+        <div class="w3-display-container mySlides">
+          <img src="assets/img/networking.jpg" style="width:100%">
+          <div class="w3-display-topright w3-large w3-container w3-padding-16 w3-black">
+            The Rain Forest
+          </div>
+        </div>
+        
+        <div class="w3-display-container mySlides">
+          <img src="" style="width:100%">
+          <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black">
+            Mountains!
+          </div>
+        </div>
+        
+        <button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
+        
+        </div> -->
+        
+       
+
+<footer class="footer">
+    <nav>
+        <ul>
+            <li>
+                <a href="terms-of-use">Terms of use</a>
+            </li>
+            <li>
+                <a href="privacy-policy">Privacy policy</a>
+            </li>
+            <li>
+                <a href="contact">Contact</a>
+            </li>
+        </ul>
+    </nav>
+</footer>
